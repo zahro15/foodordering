@@ -1,0 +1,878 @@
+.background {
+  background-image: url('../img/begrondasar.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed; /* <== ganti dari absolute ke fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* ===== HALAMAN AWAL (HOME) ===== */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fef6f0;
+  text-align: center;
+  position: relative;
+  height: 100%;
+}
+
+.home {
+  padding: 20px;
+  position: relative;
+  z-index: 1; /* biar di atas background */
+}
+
+.cake-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 70px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 40px; /* gambar turun sedikit */
+}
+
+.headline {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  color: #000;
+}
+
+.desc {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-top: 30px; /* tombol Let’s Explore turun ke bawah */
+}
+
+/* ===== MENU PAGE STYLING ===== */
+.menu-page {
+  padding: 20px;
+  padding-bottom: 100px; /* biar gak ketutup navbar */
+}
+
+/* Header bagian atas */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+  text-align: left;
+  padding-left: 25px; /* ini yang digeser ke kanan */
+}
+
+.cake-kanan, .cake {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Subjudul */
+.sub-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  color: #333;
+  text-align: left;
+  padding-left: 35px; /* ini yang digeser ke kanan */
+}
+
+.cart-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.cart-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Grid Gambar Cake */
+.cake-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 gambar per baris */
+  gap: 12px;
+}
+
+.cake-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.cake-item img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: auto;
+  max-height: 140px;
+}
+
+.cake-item p {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 6px 0 0;
+}
+
+.cake-item span {
+  color: #777;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+/* Bottom navbar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f3e5dc;
+  padding: 8px 0;
+  border-top: 1px solid #ccc;
+  z-index: 10;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ini penting supaya icon dan teks sejajar */
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.bottom-nav img {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+  display: block;
+}
+.cart-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.cart-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/* ========== RESPONSIVE MENU ========== */
+@media screen and (max-width: 768px) {
+  .cake-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cake-item img {
+    max-height: 130px;
+  }
+
+  .menu-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .cake-kanan, .cake {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cake-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cake-item p {
+    font-size: 12px;
+  }
+
+  .cake-item span {
+    font-size: 11px;
+  }
+
+  .menu-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .cake-kanan, .cake {
+    width: 70px;
+  }
+}
+
+
+/* ========== FAVORIT PAGE STYLING ========== */
+.favorit-section {
+  padding: 20px;
+  padding-bottom: 100px; /* supaya tidak ketutup navbar */
+}
+
+.favorit-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 14px;
+  text-align: left;
+  margin-left: 50px; /* Ganti padding-left ke margin-left */
+}
+
+.favorit-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.favorit-btn {
+  padding: 8px 16px;
+  background-color: #4b2c20;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1;
+  margin: 0 5px;
+}
+
+.favorit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* biar rapi di HP */
+  gap: 12px;
+  text-align: center;
+}
+
+.favorit-grid div {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.favorit-grid img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.favorit-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.item-price {
+  font-size: 13px;
+  color: #666;
+}
+.cart-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.cart-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/* ========== Bottom Navbar ========== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f3e5dc;
+  padding: 12px 0;
+  border-top: 1px solid #ccc;
+  z-index: 10;
+}
+
+.bottom-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  font-size: 12px;
+}
+
+.bottom-nav img {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media screen and (max-width: 768px) {
+  .favorit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .favorit-grid img {
+    height: 130px;
+  }
+}
+
+/* ========== DETAIL PRODUK FAVORIT ========== */
+
+.detail-section {
+  padding: 20px;
+}
+
+.detail-header {
+  text-align: center;
+}
+
+.detail-img {
+  width: 70%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.detail-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.detail-price {
+  font-size: 16px;
+  color: #000;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.size-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.size-btn {
+  flex: 1;
+  margin: 0 5px;
+  padding: 8px;
+  border: none;
+  background-color: #4b2c20;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.topping-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.topping-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-control button {
+  padding: 5px 10px;
+  font-size: 18px;
+  background: #eee;
+  border: none;
+  border-radius: 8px;
+}
+
+.order-button {
+  background-color: #4b2c20;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* ========== KERANJANG / CART ========== */
+.cart-section {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.cart-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.location {
+  font-size: 14px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-info {
+  flex-grow: 1;
+}
+
+.cart-price {
+  font-size: 14px;
+  color: gray;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+}
+
+.promo-box {
+  background: #e0e0e0;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.total-box {
+  margin-bottom: 20px;
+}
+
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.total-final {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.checkout-box {
+  background: #eee;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.payment-method {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.checkout-btn {
+  background: #4b2c20;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 100%;
+  font-size: 16px;
+}
+
+/* ========== HALAMAN PIN CODE ========== */
+.pin-section {
+  padding: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.pin-section .back-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.pin-section h2 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.pin-section p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.pin-icon img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.pin-section h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.dot.empty {
+  color: #aaa;
+}
+
+.pin-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 200px;
+  margin: auto;
+}
+
+.pin-btn,
+.pin-delete {
+  font-size: 18px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+/* ========== HALAMAN DELIVERY (ALUR) ========== */
+.delivery-section {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.delivery-section .back-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delivery-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.map-placeholder img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.driver-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.driver-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.driver-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.call-btn {
+  background: #d9d9d9;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.delivery-info {
+  margin-top: 20px;
+  text-align: center;
+  background: #e6e0cd;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* ========== HALAMAN STRUK (RECEIPT) ========== */
+.struk-section {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.struk-section .back-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.struk-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.delivery-status {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.order-summary {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-footer {
+  background: #fff8e5;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.summary-footer .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.done-btn {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.done-btn button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.done-btn button:first-child {
+  background: #000;
+  color: #fff;
+}
+
+.cancel-btn {
+  background: #f5dcdc;
+  color: #900;
+}
+
+/* ========= HALAMAN SUKSES ========== */
+.sukses-section {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.sukses-img {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+.sukses-section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.sukses-section h3 {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.stars {
+  font-size: 24px;
+  color: #f4c542;
+  margin: 10px 0 20px;
+}
+
+.thankyou-btn {
+  background-color: #6b4a3f;
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ========= HALAMAN AKUN ========== */
+.akun-section {
+  padding: 20px;
+}
+
+.akun-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.akun-profile {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.akun-profile img {
+  width: 70px;
+}
+
+.akun-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  background: #6b4a3f;
+  color: white;
+  border-radius: 12px;
+  padding: 10px 0;
+}
+
+.akun-stats div {
+  text-align: center;
+}
+
+.akun-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.akun-menu li {
+  border-bottom: 1px solid #ddd;
+}
+
+.akun-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.akun-menu li i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background: #f3e5dc;
+  padding: 12px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottom-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.bottom-nav a.active {
+  color: #6b4a3f;
+}
